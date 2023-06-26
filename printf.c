@@ -32,8 +32,14 @@ int _printf(const char *format, ...)
 				_putchar(c);
 				count++;
 			}
-			else
+			else if (*format == '\\')
 			{
+				format++;
+				if (*format == 'n')
+				{
+					_putchar('\n');
+					count++;
+				}
 			}	
 		}
 		format++;
