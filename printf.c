@@ -22,6 +22,11 @@ int _printf(const char *format, ...)
 			{
 				char *s = va_arg(args, char*);
 				print_string(s);
+			}
+			if (*format == 'c')
+			{
+				int c = va_arg(args, int);
+				_putchar(c);
 			}	
 		}
 		format++;
