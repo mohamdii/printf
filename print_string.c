@@ -7,6 +7,10 @@
 
 void print_string(char *s)
 {
+	if (s == NULL)
+	{
+		return;
+	}
 	while	(*s != '\0')
 	{
 		_putchar(*s);
