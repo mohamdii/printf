@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 				_putchar(c);
 				count++;
 			}
-			else if (*format == 'd')
+			else if (*format == 'd' || *format == 'i')
 			{
 				int num = va_arg(args, int);
 
