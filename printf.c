@@ -36,9 +36,17 @@ int _printf(const char *format, ...)
 				_putchar(c);
 				count++;
 			}
+			else if (*format == 'i')
+			{
+				int num = va_arg(args, int);
+
+				print_integer(num);
+			}
 			else
 			{
-				return (-2);
+				_putchar('%');
+				_putchar(*format);
+				count += 2;
 				
 			}
 		}
