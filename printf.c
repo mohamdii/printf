@@ -36,8 +36,6 @@ int _printf(const char *format, ...)
 				_putchar(c);
 				count++;
 			}
-			else if (*format == '%' || *format == ' ')
-				return (-2);
 			else
 			{
 				_putchar('%');
