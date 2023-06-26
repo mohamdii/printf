@@ -1,6 +1,11 @@
 #include "main.h"
 #include <unistd.h>
+/**
+ * _putchar- writing characters
+ * @c: character to be written to the output
+ * Return: the number of bytes written
+ * **/
 int _putchar(char c)
 {
-	return (write(1, &c,1));
+	return (write(1, &c, 1));
 }
