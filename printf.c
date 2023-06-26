@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "print.h"
+#include "main.h"
 #include <stdarg.h>
 int _printf(const char *format, ...)
 {

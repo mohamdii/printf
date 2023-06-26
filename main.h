@@ -1,5 +1,5 @@
-#ifndef PRINT_H
-#define PRINT_H
+#ifndef MAIN_H
+#define MAIN_H
 
 void print_string(char *s);
 #endif

@@ -1,4 +1,4 @@
-#include "print.h"
+#include "main.h"
 #include <stdio.h>
 void print_string(char *s)
 {
