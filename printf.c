@@ -20,17 +20,20 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 				break;
-			if (*format == 's')
+			else if (*format == 's')
 			{
 				char *s = va_arg(args, char*);
 				print_string(s);
 				count += strlen(s);
 			}
-			if (*format == 'c')
+			else if (*format == 'c')
 			{
 				int c = va_arg(args, int);
 				_putchar(c);
 				count++;
+			}
+			else
+			{
 			}	
 		}
 		format++;

@@ -3,6 +3,7 @@
 
 int main(void)
 {
-	_printf("%s\n", "ahmed");
+	_printf("%s%c \n", "ahmed", 'l');
+	printf("%s%c \n", "ahmed", 'l');
 	return (1);
 }
