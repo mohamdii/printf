@@ -23,11 +23,3 @@ int _printf(const char *format, ...)
 	}
 	return (1);
 }
-
-int main(void)
-{
-	_printf("%s","ahmed");
-	return (0);
-}
-
-
