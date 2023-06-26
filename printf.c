@@ -1,6 +1,6 @@
-#include <stdio.h>
 #include "main.h"
 #include <stdarg.h>
+#include <stdio.h>
 #include <string.h>
 /**
  * _printf - creates a printf like funtion
@@ -17,6 +17,11 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
+		}
+		else
+			_putchar(*format);
+		if (*format == '%')
+		{
 			format++;
 			if (*format == '\0')
 				break;
@@ -31,15 +36,6 @@ int _printf(const char *format, ...)
 				int c = va_arg(args, int);
 				_putchar(c);
 				count++;
-			}
-			else if (*format == '\\')
-			{
-				format++;
-				if (*format == 'n')
-				{
-					_putchar('\n');
-					count++;
-				}
 			}	
 		}
 		format++;
