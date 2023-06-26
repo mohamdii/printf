@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include "main.h"
 #include <stdarg.h>
+/**
+ * _printf - creates a printf like funtion
+ * @format: the string
+ * Return: integer
+ */
 int _printf(const char *format, ...)
 {
 	va_list args;
