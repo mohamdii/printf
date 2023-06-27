@@ -17,7 +17,6 @@ int _printf(char *format, ...)
 		return (-1);
 	va_start(ptr, format);
 	e[2] = '\0';
-	_putchar(-1);
 	while(format[0])
 	{
 		if (format[0] == '%')
@@ -47,7 +46,6 @@ int _printf(char *format, ...)
 			format ++;
 		}
 	}
-	_putchar(-2);
 	va_end(ptr);
 	return (count);
 }
