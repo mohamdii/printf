@@ -5,7 +5,7 @@
  * @num: takes number
  */
 
-void absolute(int num)
+int absolute(int num)
 {
 	if (num < 0)
 		return (-1 * num);
@@ -18,7 +18,7 @@ int digitcount(int num)
 	int num2 = num;
 	if (num <= 0)
 		counter++;
-	while (abs(num2) != 0)
+	while (absolute(num2) != 0)
 	{
 		num2 = num2 /10;
 		counter++;
@@ -43,7 +43,7 @@ int int_recursion(int num)
 	if (unii >= 10)
 		int_recursion(unii / 10);
 	_putchar(unii % 10 + '0');
-	return (count);
+	return (counter);
 }
 int print_integer(char *format, va_list ptr)
 {
@@ -51,6 +51,6 @@ int print_integer(char *format, va_list ptr)
 	int number;
 	(void)format;
 
-	number = print_integer(num);
+	number = int_recursion(num);
 	return (number);
 }

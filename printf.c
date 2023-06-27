@@ -7,15 +7,15 @@
  * @format: the string
  * Return: integer
  */
-int _printf(const char *format, ...)
+int _printf(char *format, ...)
 {
-	va_list args;
+	va_list ptr;
 	int count = 0, (*printtype)(char *, va_list);
 	char e[3];
 
 	if (format == NULL)
 		return (-1);
-	va_start(args, format);
+	va_start(ptr, format);
 	e[3] = '\0';
 	while(*(format + 0))
 	{
@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			{
 				e[0] = '%';
 				e[1] = *(format + 1);
-				count += printtype(p, args);
+				count += printtype(e, ptr);
 			}
 			else if (*(format + 1) != '\0')
 			{
@@ -48,6 +48,6 @@ int _printf(const char *format, ...)
 		}
 	}
 
-	va_end(args);
+	va_end(ptr);
 	return (count);
 }

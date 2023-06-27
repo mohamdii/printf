@@ -3,10 +3,12 @@
 #include <stdarg.h>
 #include <string.h>
 #include <stdio.h>
-int _printf(const char *format, ...);
+int _printf(char *format, ...);
 int _putchar(char c);
-void print_integer(int num);
-void print_string(char *s);
+int _puts_string(char *str);
+int print_char(char *format, va_list ptr);
+int print_integer(char *format, va_list ptr);
+int print_string(char *format, va_list ptr);
 int (*match(char *format))(char *format, va_list);
 /**
  * struct funcstruct - sturct that has a pointer and a pointer function

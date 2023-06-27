@@ -2,18 +2,20 @@
 #include <unistd.h>
 /**
  * print_string - functing that prints string
- * @s: string pointer
+ * @format: string pointer
+ * @ptr: va_list.
  */
 
-void print_string(char *format, va_list ptr)
+int print_string(char *format, va_list ptr)
 {
 	int counter;
 	char *str = va_arg(ptr, char*);
-	void(format);
+	
+	(void)format;
 
 	if (str == NULL)
 	{
-		return;
+		return (-1);
 	}
 	counter = _puts_string(str);
 	return (counter);

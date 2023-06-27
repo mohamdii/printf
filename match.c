@@ -6,16 +6,16 @@
  * Return: pointer
  */
 
-int(*match(char *format))(char *format, va_list)
+int (*match(char *format))(char *format, va_list)
 {
-	int i = 0;
+	int i;
 
 	printtype matcher[] = {
 		{"%c", print_char},
 		{"%s", print_string},
 		{"%d", print_integer},
-		{"%i", print_integer}
-		{"NULL", "NULL"}
+		{"%i", print_integer},
+		{NULL, NULL}
 	};
 	if (format[1] == ' ' || format[1] == '\0')
 		return (NULL);
