@@ -16,10 +16,11 @@ int _printf(char *format, ...)
 	if (format == NULL)
 		return (-1);
 	va_start(ptr, format);
-	e[3] = '\0';
-	while(*(format + 0))
+	e[2] = '\0';
+	_putchar(-1);
+	while(format[0])
 	{
-		if (*(format + 0) == '%')
+		if (format[0] == '%')
 		{
 			printtype = match(format);
 			if (printtype)
@@ -28,26 +29,25 @@ int _printf(char *format, ...)
 				e[1] = *(format + 1);
 				count += printtype(e, ptr);
 			}
-			else if (*(format + 1) != '\0')
+			else if (format[1] != '\0')
 			{
 				count += _putchar('%');
-				count += _putchar(*(format + 1));
+				count += _putchar(format[0]);
 			}
 			else
 			{
 				count += _putchar('%');
 				break;
 			}
-			format ++;
-			format ++;
+			format +=2;
 		}
 		else
 		{
-			count += _putchar(*(format + 0));
+			count += _putchar(format[0]);
 			format ++;
 		}
 	}
-
+	_putchar(-2);
 	va_end(ptr);
 	return (count);
 }

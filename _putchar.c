@@ -1,5 +1,6 @@
-#include "main.h"
+
 #include <unistd.h>
+
 /**
  * _putchar- writing characters
  * @c: character to be written to the output
@@ -7,5 +8,25 @@
  * **/
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+	static int counter;
+	static char buff[1024];
+
+	if (c == -1)
+	{
+		counter = 0;
+		return (0);
+	}
+	if (c == -2 || counter == 1024)
+	{
+		write(1, buff, counter);
+		counter = 0;
+	}
+	if (c != -1 && c != -2)
+	{
+		buff[counter] = counter;
+		counter += 1;
+		
+		return(1);
+	}
+	return (0);
 }

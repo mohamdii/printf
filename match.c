@@ -8,7 +8,7 @@
 
 int (*match(char *format))(char *format, va_list)
 {
-	int i;
+	int i = 0;
 
 	printtype matcher[] = {
 		{"%c", print_char},

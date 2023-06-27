@@ -15,7 +15,7 @@ int print_string(char *format, va_list ptr)
 
 	if (str == NULL)
 	{
-		return (-1);
+		str = "null";
 	}
 	counter = _puts_string(str);
 	return (counter);
