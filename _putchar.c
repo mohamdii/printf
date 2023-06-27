@@ -14,7 +14,7 @@ int _putchar(char c)
 	if (c == -1)
 	{
 		counter = 0;
-		return (0);
+		return (-1);
 	}
 	if (c == -2 || counter == 1024)
 	{
