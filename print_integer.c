@@ -7,8 +7,11 @@
 
 int absolute(int num)
 {
+	int y = num;
 	if (num < 0)
-		return (-1 * num);
+	{
+		return (-1 * y);
+	}
 	else 
 		return (num);
 }
