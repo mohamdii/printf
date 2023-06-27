@@ -10,52 +10,44 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int count = 0;
+	int count = 0, (*printtype)(char *, va_list);
+	char e[3];
 
 	if (format == NULL)
 		return (-1);
 	va_start(args, format);
-	for ( ; *format != '\0'; format++)
+	e[3] = '\0';
+	while(*(format + 0))
 	{
-		if (*format == '%')
+		if (*(format + 0) == '%')
 		{
-			format++;
-			if (*format == '\0')
-				break;
-			else if (*format == 's')
+			printtype = match(format);
+			if (printtype)
 			{
-				char *s = va_arg(args, char*);
-
-				print_string(s);
-				count += strlen(s);
+				e[0] = '%';
+				e[1] = *(format + 1);
+				count += printtype(p, args);
 			}
-			else if (*format == 'c')
+			else if (*(format + 1) != '\0')
 			{
-				int c = va_arg(args, int);
-
-				_putchar(c);
-				count++;
-			}
-			else if (*format == 'd' || *format == 'i')
-			{
-				int num = va_arg(args, int);
-
-				print_integer(num);
+				count += _putchar('%');
+				count += _putchar(*(format + 1));
 			}
 			else
 			{
-				_putchar('%');
-				_putchar(*format);
-				count += 2;
-				
+				count += _putchar('%');
+				break;
 			}
+			format ++;
+			format ++;
 		}
 		else
 		{
-			_putchar(*format);
-			count++;
+			count += _putchar(*(format + 0));
+			format ++;
 		}
 	}
+
 	va_end(args);
 	return (count);
 }

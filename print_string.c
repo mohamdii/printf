@@ -5,15 +5,16 @@
  * @s: string pointer
  */
 
-void print_string(char *s)
+void print_string(char *format, va_list ptr)
 {
-	if (s == NULL)
+	int counter;
+	char *str = va_arg(ptr, char*);
+	void(format);
+
+	if (str == NULL)
 	{
 		return;
 	}
-	while	(*s != '\0')
-	{
-		_putchar(*s);
-		s++;
-	}
+	counter = _puts_string(str);
+	return (counter);
 }

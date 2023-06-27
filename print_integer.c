@@ -5,16 +5,52 @@
  * @num: takes number
  */
 
-void print_integer(int num)
+void absolute(int num)
 {
+	if (num < 0)
+		return (-1 * num);
+	else 
+		return (num);
+}
+int digitcount(int num)
+{
+	int counter = 0;
+	int num2 = num;
+	if (num <= 0)
+		counter++;
+	while (abs(num2) != 0)
+	{
+		num2 = num2 /10;
+		counter++;
+	}
+	return (counter);
+}
+
+
+int int_recursion(int num)
+{
+	unsigned int unii;
+	int counter;
+
+	counter = digitcount(num);
 	if (num < 0)
 	{
 		_putchar('-');
-		num = -num;
+		unii = -num;
 	}
-	if (num / 10 != 0) 
-	{
-		print_integer(num / 10);
-	}
-	_putchar('0' + (num % 10));
+	else 
+		unii = num;
+	if (unii >= 10)
+		int_recursion(unii / 10);
+	_putchar(unii % 10 + '0');
+	return (count);
+}
+int print_integer(char *format, va_list ptr)
+{
+	int num = va_arg(ptr, int);
+	int number;
+	(void)format;
+
+	number = print_integer(num);
+	return (number);
 }
