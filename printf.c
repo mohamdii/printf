@@ -30,7 +30,7 @@ int _printf(char *format, ...)
 			}
 			else if (format[1] != '\0')
 			{
-				count += _putchar('%');
+				count += _putchar(*format);
 				count += _putchar(format[0]);
 			}
 			else
